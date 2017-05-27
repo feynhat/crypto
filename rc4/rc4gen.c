@@ -22,12 +22,11 @@ int main(int argc, char **argv)
 		k[0] = argv[1][2*i+2];
 		k[1] = argv[1][2*i+3];
 		k[2] = '\0';
-		K[i] = atoi(k);
+		K[i] = (byte)strtoul(k, NULL, 16);
 	}
 	n_bytes = atoi(argv[2]);
 	ksa(K, kl);
 	prga(KS, n_bytes);
-	printf("%d\n", n_bytes);
 	for (i = 0; i < n_bytes; ++i) {
 		printf("%02X ", KS[i]);
 	}
